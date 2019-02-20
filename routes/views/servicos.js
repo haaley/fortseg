@@ -7,24 +7,14 @@ exports = module.exports = function(req, res) {
     //set Locals
     locals.section = 'servicos';
     locals.filters = {
-		servico: req.params.servico
+		servicos: req.params.servicos
 	}
 	locals.data = {
 		servicos: []
 	}
     //load Servicos
     //carrega os serviços
-view.on('init', function(next){
-    var q = keystone.list('Servico').model.findOne({
-    slug: locals.filters.servico
-    });
+	view.query('servicos', keystone.list('Servico').model.find());
 
-    q.exec(function(err,result){
-        locals.data.servico = result;
-        next(err);
-    });
-});
-
-
-    view.render('servico');
+    view.render('servicos');
 }

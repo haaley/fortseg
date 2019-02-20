@@ -21,7 +21,8 @@ Servico.add({
         completa:{type: Types.Html, wysiwyg: true, height: 200, label: "Descricao completa"}
     },
     criadoEm: {type: Types.Date, index: true, default: new Date() },
-    imagens: {type: Types.CloudinaryImages}
+    imagens: {type: Types.CloudinaryImages},
+    heroImage: { type: Types.CloudinaryImage },
 
 });
 

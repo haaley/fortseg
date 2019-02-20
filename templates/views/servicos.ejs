@@ -1,0 +1,147 @@
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+		<% include /partials/head %>
+		<body>
+
+		<% include /partials/header %>
+
+			<!-- start banner Area -->
+			<section class="banner-area relative" id="home">
+				<div class="overlay overlay-bg"></div>	
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-start">
+						<div class="banner-content col-lg-9">
+							<h6 class="text-white">Openning on 21st February, 2018</h6>
+							<h1 class="text-white">
+									<% if(user){ %>
+									Olá <%= user.name.first %>!
+									  <% } else{ %>  
+										Olá Visitante!
+									 <% } %>
+								
+							
+								 
+							</h1>
+							<p class="pt-20 pb-20 text-white">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.  sed do eiusmod tempor incididunt..
+							</p>
+							<a href="#" class="primary-btn text-uppercase">Get Started</a>
+						</div>											
+					</div>
+				</div>					
+			</section>
+			<!-- End banner Area -->	
+
+
+			<!-- Start service Area -->
+			<section class="service-area service-page-service section-gap" id="service">
+				<div class="container">
+				
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Serviços Realizados</h1>
+								<p> Clientes extremamente satisfeitos!</p>
+							</div>
+						</div>
+					</div>						
+					<div class="row">
+					<% servicos.forEach((servicos) => { %>
+						<div class="col-lg-4">
+									<div class="single-service">
+											<div class="thumb">
+												<img class="img-fluid" src="<%= servicos.heroImage.url %>" alt="">
+											</div>
+									<div class="detail">
+											<a href="/servicos/<%= servicos.slug %>"><h4><%= servicos.servico %></h4></a>
+												<p>
+													<%= servicos.descricao.breve %>									
+												</p>
+
+									</div>
+									</div>
+									
+						</div>
+					<% }) %>
+						</div>
+																		
+					</div>
+				</div>	
+			</section>
+			<!-- End service Area -->	
+
+			<!-- Start feature Area -->
+			<section class="feature-area section-gap" id="feature">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="col-md-8 pb-40 header-text">
+							<h1>Some Features that Made us Unique</h1>
+							<p>
+								Who are in extremely love with eco friendly system.
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4 col-md-6">
+							<div class="single-feature">
+								<h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-feature">
+								<h4><span class="lnr lnr-license"></span>Professional Service</h4>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-feature">
+								<h4><span class="lnr lnr-phone"></span>Great Support</h4>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-feature">
+								<h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>				
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-feature">
+								<h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>								
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-feature">
+								<h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>									
+							</div>
+						</div>						
+					</div>
+				</div>	
+			</section>
+			<!-- End feature Area -->						
+						
+			<!-- Start footer-->
+			<% include /partials/footer %>
+			<!-- End footer Area -->		
+
+			<% include /partials/scripts %>
+		</body>
+	</html>
+
+
+

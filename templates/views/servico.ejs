@@ -1,124 +1,97 @@
-	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
-		<% include /partials/head %>
-		<body>
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+	<% include /partials/head %>
 
+	<body>
 		<% include /partials/header %>
 
-			<!-- start banner Area -->
-			<%include /partials/banner %>
-			<!-- End banner Area -->	
-
-
-			<!-- Start service Area -->
-			<section class="service-area service-page-service section-gap" id="service">
-				<div class="container">
-				
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-70 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Serviços Realizados</h1>
-								<p> Clientes extremamente satisfeitos!</p>
-							</div>
-						</div>
-					</div>						
-					<div class="row">
-					<% servico.forEach((servico) => { %>
-						<div class="col-lg-4">
-									<div class="single-service">
-											<div class="thumb">
-												<img class="img-fluid" src="/frontend/img/s1.jpg" alt="">
-											</div>
-									<div class="detail">
-											<a href="/servico/<%= servico.servico %>"><h4><%= servico.servico %></h4></a>
-												<p>
-													<%= servico.descricao.breve %>									
-												</p>
-
-									</div>
-									</div>
-									
-						</div>
-					<% }) %>
-						</div>
-																		
+		<!-- start banner Area -->
+		<section class="banner-area relative" id="home">
+			<div class="overlay overlay-bg"></div>
+			<div class="container">
+				<div class="row d-flex align-items-center justify-content-center">
+					<div class="about-content col-lg-12">
+						<h1 class="text-white">
+							<%= data.servico.servico %>
+						</h1>
+						<p class="text-white link-nav">
+							<a href="/servicos">Serviços </a>
+							<span class="lnr lnr-arrow-right"></span>
+							<a href="<%=data.servico.slug%>"> <%= data.servico.servico%></a>
+						</p>
 					</div>
-				</div>	
-			</section>
-			<!-- End service Area -->	
+				</div>
+			</div>
+		</section>
+		<!-- End banner Area -->
 
-			<!-- Start feature Area -->
-			<section class="feature-area section-gap" id="feature">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="col-md-8 pb-40 header-text">
-							<h1>Some Features that Made us Unique</h1>
-							<p>
-								Who are in extremely love with eco friendly system.
-							</p>
+		<!-- Start price Area -->
+		<section class="price-area section-gap price-page-prices" id="price">
+			<div class="container">
+				<div class="section-top-border">
+					<div class="price-top">
+                        <h2><%= data.servico.descricao.breve%></h2>
+                        <p></p>
+					</div>
+					<blockquote class="generic-blockquote">
+						<%- data.servico.descricao.completa %>
+					</blockquote>
+
+					<div class="section-top-border">
+                        <h3>Galeria</h3>
+						<div class="row gallery-item">
+							<% data.servico.imagens.forEach((imagem) => { %>
+
+							<div class="col-md-4">
+								<a href="<%= imagem.url %>" class="img-pop-up"
+									><div
+										class="single-gallery-image"
+										style="background: url(<%= imagem.url %>);"
+									></div
+								></a>
+							</div>
+
+							<% }) %>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-lg-4 col-md-6">
-							<div class="single-feature">
-								<h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="single-feature">
-								<h4><span class="lnr lnr-license"></span>Professional Service</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="single-feature">
-								<h4><span class="lnr lnr-phone"></span>Great Support</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="single-feature">
-								<h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>				
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="single-feature">
-								<h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="single-feature">
-								<h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>									
-							</div>
-						</div>						
+				</div>
+			</div>
+		</section>
+		<!-- End price Area -->
+
+		<!-- Start fact Area -->
+		<section class="facts-area section-gap" id="facts-area">
+			<div class="container">
+				<div class="row">
+					<div class="col single-fact">
+						<h1 class="counter">2536</h1>
+						<p>Projects Completed</p>
 					</div>
-				</div>	
-			</section>
-			<!-- End feature Area -->						
-						
-			<!-- Start footer-->
-			<% include /partials/footer %>
-			<!-- End footer Area -->		
+					<div class="col single-fact">
+						<h1 class="counter">6784</h1>
+						<p>Really Happy Clients</p>
+					</div>
+					<div class="col single-fact">
+						<h1 class="counter">1059</h1>
+						<p>Total Tasks Completed</p>
+					</div>
+					<div class="col single-fact">
+						<h1 class="counter">2239</h1>
+						<p>Cups of Coffee Taken</p>
+					</div>
+					<div class="col single-fact">
+						<h1 class="counter">435</h1>
+						<p>In House Professionals</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end fact Area -->
 
-			<% include /partials/scripts %>
-		</body>
-	</html>
+		<!-- start footer Area -->
+		<% include /partials/footer %>
+		<!-- End footer Area -->
 
-
-
+		<% include /partials/scripts %>
+	</body>
+</html>
