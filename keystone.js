@@ -11,8 +11,8 @@ var engine = require('ejs-locals');
 // and documentation.
 
 keystone.init({
-	'name': 'empresavigilancia',
-	'brand': 'empresavigilancia',
+	'name': 'FortSeg',
+	'brand': 'FortSeg',
 
 	'less': 'public',
 	'static': 'public',
@@ -49,9 +49,10 @@ keystone.set('routes', require('./routes'));
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	posts: ['posts', 'post-categories'],
-	galleries: 'galleries',
-	enquiries: 'enquiries',
-	ys: 'ys',
+	galerias: 'galleries',
+	produtos: 'produtos',
+	mensagens: 'enquiries',
+	usuarios: 'ys',
 	servicos: 'servicos',
 });
 
