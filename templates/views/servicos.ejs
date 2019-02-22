@@ -7,28 +7,18 @@
 
 			<!-- start banner Area -->
 			<section class="banner-area relative" id="home">
-				<div class="overlay overlay-bg"></div>	
+				<div class="overlay overlay-bg"></div>
 				<div class="container">
-					<div class="row fullscreen d-flex align-items-center justify-content-start">
-						<div class="banner-content col-lg-9">
-							<h6 class="text-white">Openning on 21st February, 2018</h6>
-							<h1 class="text-white">
-									<% if(user){ %>
-									Olá <%= user.name.first %>!
-									  <% } else{ %>  
-										Olá Visitante!
-									 <% } %>
-								
-							
-								 
-							</h1>
-							<p class="pt-20 pb-20 text-white">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.  sed do eiusmod tempor incididunt..
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<p class="text-white link-nav">
+								<a href="/">Home </a>
+								<span class="lnr lnr-arrow-right"></span>
+								<a href="/servicos"> Trabalhos Realizados</a>
 							</p>
-							<a href="#" class="primary-btn text-uppercase">Get Started</a>
-						</div>											
+						</div>
 					</div>
-				</div>					
+				</div>
 			</section>
 			<!-- End banner Area -->	
 
@@ -40,8 +30,8 @@
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-70 col-lg-8">
 							<div class="title text-center">
-								<h1 class="mb-10">Serviços Realizados</h1>
-								<p> Clientes extremamente satisfeitos!</p>
+								<h1 class="mb-10">Consulte nossos trabalhos realizados</h1>
+								<p> Qualidade e Satisfação</p>
 							</div>
 						</div>
 					</div>						
@@ -49,8 +39,15 @@
 					<% servicos.forEach((servicos) => { %>
 						<div class="col-lg-4">
 									<div class="single-service">
+
+
+
 											<div class="thumb">
-												<img class="img-fluid" src="<%= servicos.heroImage.url %>" alt="">
+													<div style="width:300px; height:150px; overflow:hidden;">
+
+															<img style="position:relative; top:-25px;"src="<%= servicos.heroImage.url %>" width="300" height="224" />
+															
+															</div>
 											</div>
 									<div class="detail">
 											<a href="/servicos/<%= servicos.slug %>"><h4><%= servicos.servico %></h4></a>
